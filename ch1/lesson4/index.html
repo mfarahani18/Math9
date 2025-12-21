@@ -30,6 +30,26 @@
             print-color-adjust: exact !important;
         }
 
+        /* --- استایل کسرها --- */
+        .fraction {
+            display: inline-block;
+            vertical-align: middle;
+            text-align: center;
+            margin: 0 4px;
+            font-size: 0.95em;
+        }
+        .fraction .numerator {
+            display: block;
+            border-bottom: 1px solid currentColor;
+            padding-bottom: 1px;
+            line-height: 1.1;
+        }
+        .fraction .denominator {
+            display: block;
+            padding-top: 1px;
+            line-height: 1.1;
+        }
+
         /* --- انیمیشن بخار فنجان --- */
         @keyframes floatUp {
             0% { transform: translateY(0) scale(1); opacity: 0.8; }
@@ -365,7 +385,9 @@
                 <div class="formula-box">
                     <strong>ج) فرمول محاسبه احتمال</strong><br>
                     اگر <span class="math-ltr">S</span> فضای نمونه‌ای و <span class="math-ltr">A</span> یک پیشامد از آن باشد (یعنی <span class="math-ltr">A ⊆ S</span>)، احتمال وقوع پیشامد <span class="math-ltr">A</span> که با نماد <span class="math-ltr">P(A)</span> نشان داده می‌شود، برابر است با:<br>
-                    <div class="text-center my-2 text-lg font-bold math-ltr">P(A) = n(A) / n(S)</div>
+                    <div class="text-center my-2 text-lg font-bold math-ltr">
+                        P(A) = <span class="fraction"><span class="numerator">n(A)</span><span class="denominator">n(S)</span></span>
+                    </div>
                     (تعداد اعضای پیشامد A تقسیم بر تعداد کل حالت‌های ممکن)
                 </div>
 
@@ -409,39 +431,39 @@
                     <p><strong>مثال ۲:</strong> در پرتاب یک تاس، احتمال اینکه عدد «۵» بیاید چقدر است؟<br>
                     <strong>پاسخ:</strong> کل حالت‌ها: <span class="math-ltr">S = {۱, ۲, ۳, ۴, ۵, ۶}</span> ← <span class="math-ltr">n(S) = ۶</span>.<br>
                     حالت مطلوب (آمدن ۵): <span class="math-ltr">A = {۵}</span> ← <span class="math-ltr">n(A) = ۱</span>.<br>
-                    احتمال: <span class="math-ltr">P(A) = ۱/۶</span>.</p>
+                    احتمال: <span class="math-ltr">P(A) = <span class="fraction"><span class="numerator">۱</span><span class="denominator">۶</span></span></span>.</p>
                 </div>
 
                 <div class="example-box">
                     <p><strong>مثال ۳:</strong> در پرتاب یک تاس، احتمال اینکه عدد «زوج» بیاید چقدر است؟<br>
                     <strong>پاسخ:</strong> حالت‌های مطلوب: <span class="math-ltr">A = {۲, ۴, ۶}</span> ← <span class="math-ltr">n(A) = ۳</span>.<br>
-                    احتمال: <span class="math-ltr">P(A) = ۳/۶ = ۱/۲</span>.</p>
+                    احتمال: <span class="math-ltr">P(A) = <span class="fraction"><span class="numerator">۳</span><span class="denominator">۶</span></span> = <span class="fraction"><span class="numerator">۱</span><span class="denominator">۲</span></span></span>.</p>
                 </div>
 
                 <div class="example-box">
                     <p><strong>مثال ۴:</strong> گردونه‌ای را که به ۴ قسمت رنگی مساوی (قرمز، آبی، سبز، زرد) تقسیم شده می‌چرخانیم. احتمال ایستادن روی رنگ «قرمز» چقدر است؟<br>
-                    <strong>پاسخ:</strong> <span class="math-ltr">n(S) = ۴</span> و <span class="math-ltr">n(A) = ۱</span>. احتمال برابر است با <span class="math-ltr">۱/۴</span>.</p>
+                    <strong>پاسخ:</strong> <span class="math-ltr">n(S) = ۴</span> و <span class="math-ltr">n(A) = ۱</span>. احتمال برابر است با <span class="math-ltr"><span class="fraction"><span class="numerator">۱</span><span class="denominator">۴</span></span></span>.</p>
                 </div>
 
                 <div class="example-box">
                     <p><strong>مثال ۵:</strong> در کیسه‌ای ۳ مهره قرمز و ۲ مهره آبی داریم. اگر تصادفی یک مهره برداریم، احتمال آبی بودن آن چقدر است؟<br>
                     <strong>پاسخ:</strong> کل مهره‌ها: <span class="math-ltr">۳ + ۲ = ۵</span>، پس <span class="math-ltr">n(S) = ۵</span>.<br>
                     مهره‌های آبی: ۲ تا، پس <span class="math-ltr">n(A) = ۲</span>.<br>
-                    احتمال: <span class="math-ltr">P(A) = ۲/۵</span>.</p>
+                    احتمال: <span class="math-ltr">P(A) = <span class="fraction"><span class="numerator">۲</span><span class="denominator">۵</span></span></span>.</p>
                 </div>
 
                 <div class="example-box">
                     <p><strong>مثال ۶:</strong> مجموعه‌ی <span class="math-ltr">M = {x ∈ ℕ | x ≤ ۱۰}</span> را در نظر بگیرید. اگر یک عدد تصادفی انتخاب کنیم، احتمال اینکه «عدد اول» باشد چقدر است؟<br>
                     <strong>پاسخ:</strong> فضای نمونه: <span class="math-ltr">S = {۱, ۲, ۳, ۴, ۵, ۶, ۷, ۸, ۹, ۱۰}</span>، پس <span class="math-ltr">n(S) = ۱۰</span>.<br>
                     اعداد اول در این مجموعه: <span class="math-ltr">A = {۲, ۳, ۵, ۷}</span>، پس <span class="math-ltr">n(A) = ۴</span>.<br>
-                    احتمال: <span class="math-ltr">P(A) = ۴/۱۰ = ۲/۵</span>.</p>
+                    احتمال: <span class="math-ltr">P(A) = <span class="fraction"><span class="numerator">۴</span><span class="denominator">۱۰</span></span> = <span class="fraction"><span class="numerator">۲</span><span class="denominator">۵</span></span></span>.</p>
                 </div>
 
                 <div class="example-box">
                     <p><strong>مثال ۷:</strong> خانواده‌ای دارای ۲ فرزند است. احتمال اینکه هر دو فرزند دختر باشند چقدر است؟<br>
                     <strong>پاسخ:</strong> فضای نمونه (پ=پسر، د=دختر): <span class="math-ltr">S = {(پ, پ), (پ, د), (د, پ), (د, د)}</span>. پس <span class="math-ltr">n(S) = ۴</span>.<br>
                     حالت مطلوب: <span class="math-ltr">A = {(د, د)}</span>، پس <span class="math-ltr">n(A) = ۱</span>.<br>
-                    احتمال: <span class="math-ltr">۱/۴</span>.</p>
+                    احتمال: <span class="math-ltr"><span class="fraction"><span class="numerator">۱</span><span class="denominator">۴</span></span></span>.</p>
                 </div>
 
                 <div class="example-box">
@@ -451,12 +473,12 @@
 
                 <div class="example-box">
                     <p><strong>مثال ۹:</strong> تاس را می‌اندازیم. احتمال آمدن عدد طبیعی چقدر است؟<br>
-                    <strong>پاسخ:</strong> تمام اعداد روی تاس (۱ تا ۶) طبیعی هستند. پس <span class="math-ltr">n(A) = ۶</span>. احتمال <span class="math-ltr">۶/۶ = ۱</span> است (پیشامد حتمی).</p>
+                    <strong>پاسخ:</strong> تمام اعداد روی تاس (۱ تا ۶) طبیعی هستند. پس <span class="math-ltr">n(A) = ۶</span>. احتمال <span class="math-ltr"><span class="fraction"><span class="numerator">۶</span><span class="denominator">۶</span></span> = ۱</span> است (پیشامد حتمی).</p>
                 </div>
 
                 <div class="example-box">
                     <p><strong>مثال ۱۰:</strong> کلمه‌ی «ریاضی» را روی کارت‌هایی نوشته‌ایم (هر حرف روی یک کارت: ر، ی، ا، ض، ی). احتمال انتخاب کارت با حرف «ی» چقدر است؟<br>
-                    <strong>پاسخ:</strong> کل حروف: ۵ تا. حروف «ی»: ۲ تا. احتمال: <span class="math-ltr">۲/۵</span>.</p>
+                    <strong>پاسخ:</strong> کل حروف: ۵ تا. حروف «ی»: ۲ تا. احتمال: <span class="math-ltr"><span class="fraction"><span class="numerator">۲</span><span class="denominator">۵</span></span></span>.</p>
                 </div>
 
                 <h3>۳. نمونه سؤالات تشریحی حل‌شده (گام‌به‌گام)</h3>
@@ -468,63 +490,63 @@
                 <strong>حل:</strong><br>
                 الف) تاس ۶ حالت دارد و سکه ۲ حالت. طبق اصل ضرب: <span class="math-ltr">n(S) = ۶ × ۲ = ۱۲</span>.<br>
                 ب) حالت‌های مطلوب: <span class="math-ltr">A = {(۲, رو), (۴, رو), (۶, رو)}</span>. تعداد ۳ تا.<br>
-                احتمال: <span class="math-ltr">P(A) = ۳/۱۲ = ۱/۴</span>.</p>
+                احتمال: <span class="math-ltr">P(A) = <span class="fraction"><span class="numerator">۳</span><span class="denominator">۱۲</span></span> = <span class="fraction"><span class="numerator">۱</span><span class="denominator">۴</span></span></span>.</p>
 
                 <p class="question-title">سؤال ۲:</p>
                 <p>مجموعه‌ی <span class="math-ltr">A = {۲, ۳, ۵, ۷, ۱۱, ۱۳}</span> داده شده است. اگر یک عضو به تصادف انتخاب کنیم، احتمال اینکه آن عضو «زوج» باشد چقدر است؟<br>
                 <strong>حل:</strong><br>
                 تعداد کل اعضا: <span class="math-ltr">n(S) = ۶</span>.<br>
                 اعضای زوج در مجموعه: فقط عدد ۲ است. پس <span class="math-ltr">n(B) = ۱</span>.<br>
-                پاسخ: <span class="math-ltr">P(B) = ۱/۶</span>.</p>
+                پاسخ: <span class="math-ltr">P(B) = <span class="fraction"><span class="numerator">۱</span><span class="denominator">۶</span></span></span>.</p>
 
                 <p class="question-title">سؤال ۳:</p>
                 <p>در یک جعبه ۵ مهره سبز، ۴ مهره سفید و ۳ مهره قرمز وجود دارد. یک مهره بیرون می‌آوریم. چقدر احتمال دارد این مهره «سبز نباشد»؟<br>
                 <strong>حل:</strong><br>
                 تعداد کل: <span class="math-ltr">۵ + ۴ + ۳ = ۱۲</span>.<br>
                 تعداد غیر سبزها (سفید + قرمز): <span class="math-ltr">۴ + ۳ = ۷</span>.<br>
-                احتمال: <span class="math-ltr">۷/۱۲</span>.</p>
+                احتمال: <span class="math-ltr"><span class="fraction"><span class="numerator">۷</span><span class="denominator">۱۲</span></span></span>.</p>
 
                 <p class="question-title">سؤال ۴:</p>
                 <p>دو تاس را پرتاب می‌کنیم. احتمال اینکه مجموع دو عدد رو شده برابر ۷ باشد را محاسبه کنید.<br>
                 <strong>حل:</strong><br>
                 فضای نمونه‌ای دو تاس: <span class="math-ltr">۶ × ۶ = ۳۶</span> حالت.<br>
                 حالت‌هایی که مجموع ۷ می‌شود: <span class="math-ltr">A = {(۱,۶), (۲,۵), (۳,۴), (۴,۳), (۵,۲), (۶,۱)}</span>.<br>
-                تعداد: ۶ تا. احتمال: <span class="math-ltr">P(A) = ۶/۳۶ = ۱/۶</span>.</p>
+                تعداد: ۶ تا. احتمال: <span class="math-ltr">P(A) = <span class="fraction"><span class="numerator">۶</span><span class="denominator">۳۶</span></span> = <span class="fraction"><span class="numerator">۱</span><span class="denominator">۶</span></span></span>.</p>
 
                 <p class="question-title">سؤال ۵:</p>
                 <p>اعداد ۱ تا ۲۰ را روی کارت‌های یکسان نوشته‌ایم. یک کارت برمی‌داریم. احتمال اینکه عدد روی کارت مضرب ۴ باشد چقدر است؟<br>
                 <strong>حل:</strong> <span class="math-ltr">n(S) = ۲۰</span>.<br>
                 مضارب ۴ تا ۲۰: <span class="math-ltr">A = {۴, ۸, ۱۲, ۱۶, ۲۰}</span>.<br>
-                تعداد ۵ تا. احتمال: <span class="math-ltr">P(A) = ۵/۲۰ = ۱/۴</span>.</p>
+                تعداد ۵ تا. احتمال: <span class="math-ltr">P(A) = <span class="fraction"><span class="numerator">۵</span><span class="denominator">۲۰</span></span> = <span class="fraction"><span class="numerator">۱</span><span class="denominator">۴</span></span></span>.</p>
 
                 <p class="question-title">سؤال ۶:</p>
                 <p>خانواده‌ای ۳ فرزند دارد. چقدر احتمال دارد که این خانواده دقیقاً یک دختر داشته باشد؟<br>
                 <strong>حل:</strong> کل حالت‌ها (<span class="math-ltr">۲ × ۲ × ۲</span>): <span class="math-ltr">n(S) = ۸</span>.<br>
                 حالت‌های ۱ دختر: <span class="math-ltr">{(د, پ, پ), (پ, د, پ), (پ, پ, د)}</span>. تعداد ۳ تا.<br>
-                احتمال: <span class="math-ltr">۳/۸</span>.</p>
+                احتمال: <span class="math-ltr"><span class="fraction"><span class="numerator">۳</span><span class="denominator">۸</span></span></span>.</p>
 
                 <p class="question-title">سؤال ۷:</p>
                 <p>در یک کلاس ۳۰ نفره، ۱۵ نفر عضو تیم فوتبال هستند. اگر مبصر کلاس به تصادف انتخاب شود، احتمال اینکه فوتبالیست باشد چقدر است؟ احتمال اینکه فوتبالیست نباشد چقدر است؟<br>
                 <strong>حل:</strong><br>
-                احتمال فوتبالیست بودن: <span class="math-ltr">۱۵/۳۰ = ۱/۲</span>.<br>
-                احتمال فوتبالیست نبودن: <span class="math-ltr">۱ - ۱/۲ = ۱/۲</span>.</p>
+                احتمال فوتبالیست بودن: <span class="math-ltr"><span class="fraction"><span class="numerator">۱۵</span><span class="denominator">۳۰</span></span> = <span class="fraction"><span class="numerator">۱</span><span class="denominator">۲</span></span></span>.<br>
+                احتمال فوتبالیست نبودن: <span class="math-ltr">۱ - <span class="fraction"><span class="numerator">۱</span><span class="denominator">۲</span></span> = <span class="fraction"><span class="numerator">۱</span><span class="denominator">۲</span></span></span>.</p>
 
                 <p class="question-title">سؤال ۸:</p>
                 <p>عقربه‌ی چرخنده‌ای که اعداد ۱ تا ۸ روی آن نوشته شده است را می‌چرخانیم. احتمال اینکه عقربه روی عدد «اولِ زوج» بایستد چقدر است؟<br>
                 <strong>حل:</strong> <span class="math-ltr">n(S) = ۸</span>.<br>
                 اعداد اول: ۲، ۳، ۵، ۷. عدد اولِ زوج: فقط ۲.<br>
-                احتمال: <span class="math-ltr">۱/۸</span>.</p>
+                احتمال: <span class="math-ltr"><span class="fraction"><span class="numerator">۱</span><span class="denominator">۸</span></span></span>.</p>
 
                 <p class="question-title">سؤال ۹:</p>
                 <p>اگر <span class="math-ltr">A ⊆ S</span> و <span class="math-ltr">n(S) = ۲۰</span> و <span class="math-ltr">P(A) = ۰/۴</span> باشد، تعداد اعضای مجموعه <span class="math-ltr">A</span> چندتاست؟<br>
-                <strong>حل:</strong> <span class="math-ltr">P(A) = n(A) / ۲۰</span> → <span class="math-ltr">۰/۴ = n(A) / ۲۰</span>.<br>
+                <strong>حل:</strong> <span class="math-ltr">P(A) = <span class="fraction"><span class="numerator">n(A)</span><span class="denominator">۲۰</span></span></span> → <span class="math-ltr">۰/۴ = <span class="fraction"><span class="numerator">n(A)</span><span class="denominator">۲۰</span></span></span>.<br>
                 <span class="math-ltr">n(A) = ۰/۴ × ۲۰ = ۸</span> عضو.</p>
 
                 <p class="question-title">سؤال ۱۰:</p>
-                <p>در یک کیسه تعدادی مهره سیاه و سفید داریم. اگر احتمال درآمدن مهره سیاه <span class="math-ltr">۳/۱۰</span> باشد و تعداد مهره‌های سفید ۱۴ تا باشد، کل مهره‌ها چندتاست؟<br>
+                <p>در یک کیسه تعدادی مهره سیاه و سفید داریم. اگر احتمال درآمدن مهره سیاه <span class="math-ltr"><span class="fraction"><span class="numerator">۳</span><span class="denominator">۱۰</span></span></span> باشد و تعداد مهره‌های سفید ۱۴ تا باشد، کل مهره‌ها چندتاست؟<br>
                 <strong>حل:</strong><br>
-                احتمال سفید: <span class="math-ltr">۱ - ۳/۱۰ = ۷/۱۰</span>.<br>
-                نسبت سفیدها <span class="math-ltr">۷/۱۰</span> است. یعنی ۷ واحد برابر ۱۴ مهره است (هر واحد ۲ مهره).<br>
+                احتمال سفید: <span class="math-ltr">۱ - <span class="fraction"><span class="numerator">۳</span><span class="denominator">۱۰</span></span> = <span class="fraction"><span class="numerator">۷</span><span class="denominator">۱۰</span></span></span>.<br>
+                نسبت سفیدها <span class="math-ltr"><span class="fraction"><span class="numerator">۷</span><span class="denominator">۱۰</span></span></span> است. یعنی ۷ واحد برابر ۱۴ مهره است (هر واحد ۲ مهره).<br>
                 کل: ۱۰ واحد × ۲ = ۲۰ مهره.</p>
 
                 <h3>۴. تمرین‌های دانش‌آموزی (بدون پاسخ)</h3>
@@ -533,7 +555,7 @@
                     <li>۲. در پرتاب دو سکه، احتمال اینکه «حداقل یک سکه رو بیاید» را حساب کنید.</li>
                     <li>۳. کلمه‌ی «IRAN» را در نظر بگیرید. اگر حروفی را به تصادف انتخاب کنیم، احتمال اینکه حرف صدادار (A یا I) باشد چقدر است؟</li>
                     <li>۴. مجموعه‌ی <span class="math-ltr">A = {x ∈ ℤ | -۳ < x < ۳}</span> مفروض است. اگر عددی انتخاب کنیم، احتمال اینکه مثبت باشد چقدر است؟</li>
-                    <li>۵. در یک جعبه ۱۰ مهره آبی و قرمز وجود دارد. اگر احتمال انتخاب مهره قرمز <span class="math-ltr">۲/۵</span> باشد، چند مهره آبی در جعبه داریم؟</li>
+                    <li>۵. در یک جعبه ۱۰ مهره آبی و قرمز وجود دارد. اگر احتمال انتخاب مهره قرمز <span class="math-ltr"><span class="fraction"><span class="numerator">۲</span><span class="denominator">۵</span></span></span> باشد، چند مهره آبی در جعبه داریم؟</li>
                     <li>۶. دو تاس را می‌اندازیم. احتمال اینکه هر دو عدد مثل هم باشند (جفت باشند) چقدر است؟</li>
                     <li>۷. خانواده‌ای سه فرزند دارد. احتمال اینکه هر سه هم‌جنس باشند (همه پسر یا همه دختر) چقدر است؟</li>
                     <li>۸. عددی طبیعی کوچک‌تر از ۲۵ انتخاب می‌کنیم. احتمال اینکه مجذور کامل باشد چقدر است؟</li>
@@ -545,44 +567,44 @@
                 
                 <div class="example-box">
                     <p><strong>تست ۱:</strong> اگر یک تاس را پرتاب کنیم، احتمال اینکه عدد رو شده بزرگ‌تر از ۲ باشد کدام است؟<br>
-                    الف) <span class="math-ltr">۱/۲</span> &nbsp;&nbsp;&nbsp; ب) <span class="math-ltr">۲/۳</span> &nbsp;&nbsp;&nbsp; ج) <span class="math-ltr">۱/۳</span> &nbsp;&nbsp;&nbsp; د) <span class="math-ltr">۵/۶</span><br>
-                    <strong>پاسخ تشریحی:</strong> اعداد بزرگ‌تر از ۲: ۳، ۴، ۵، ۶ (۴ عدد). احتمال: <span class="math-ltr">۴/۶ = ۲/۳</span>. گزینه صحیح: ب</p>
+                    الف) <span class="math-ltr"><span class="fraction"><span class="numerator">۱</span><span class="denominator">۲</span></span></span> &nbsp;&nbsp;&nbsp; ب) <span class="math-ltr"><span class="fraction"><span class="numerator">۲</span><span class="denominator">۳</span></span></span> &nbsp;&nbsp;&nbsp; ج) <span class="math-ltr"><span class="fraction"><span class="numerator">۱</span><span class="denominator">۳</span></span></span> &nbsp;&nbsp;&nbsp; د) <span class="math-ltr"><span class="fraction"><span class="numerator">۵</span><span class="denominator">۶</span></span></span><br>
+                    <strong>پاسخ تشریحی:</strong> اعداد بزرگ‌تر از ۲: ۳، ۴، ۵، ۶ (۴ عدد). احتمال: <span class="math-ltr"><span class="fraction"><span class="numerator">۴</span><span class="denominator">۶</span></span> = <span class="fraction"><span class="numerator">۲</span><span class="denominator">۳</span></span></span>. گزینه صحیح: ب</p>
                 </div>
 
                 <div class="example-box">
                     <p><strong>تست ۲:</strong> در پرتاب دو سکه با هم، احتمال اینکه یکی رو و دیگری پشت بیاید چقدر است؟<br>
-                    الف) <span class="math-ltr">۱/۴</span> &nbsp;&nbsp;&nbsp; ب) <span class="math-ltr">۱/۳</span> &nbsp;&nbsp;&nbsp; ج) <span class="math-ltr">۱/۲</span> &nbsp;&nbsp;&nbsp; د) ۱<br>
-                    <strong>پاسخ تشریحی:</strong> حالات مطلوب: (ر، پ) و (پ، ر). ۲ حالت از ۴ حالت. احتمال <span class="math-ltr">۲/۴ = ۱/۲</span>. گزینه صحیح: ج</p>
+                    الف) <span class="math-ltr"><span class="fraction"><span class="numerator">۱</span><span class="denominator">۴</span></span></span> &nbsp;&nbsp;&nbsp; ب) <span class="math-ltr"><span class="fraction"><span class="numerator">۱</span><span class="denominator">۳</span></span></span> &nbsp;&nbsp;&nbsp; ج) <span class="math-ltr"><span class="fraction"><span class="numerator">۱</span><span class="denominator">۲</span></span></span> &nbsp;&nbsp;&nbsp; د) ۱<br>
+                    <strong>پاسخ تشریحی:</strong> حالات مطلوب: (ر، پ) و (پ، ر). ۲ حالت از ۴ حالت. احتمال <span class="math-ltr"><span class="fraction"><span class="numerator">۲</span><span class="denominator">۴</span></span> = <span class="fraction"><span class="numerator">۱</span><span class="denominator">۲</span></span></span>. گزینه صحیح: ج</p>
                 </div>
 
                 <div class="example-box">
                     <p><strong>تست ۳:</strong> کدام گزینه نمی‌تواند احتمال وقوع یک پیشامد باشد؟<br>
-                    الف) <span class="math-ltr">۰/۰۱</span> &nbsp;&nbsp;&nbsp; ب) <span class="math-ltr">۷/۸</span> &nbsp;&nbsp;&nbsp; ج) <span class="math-ltr">۱/۵</span> &nbsp;&nbsp;&nbsp; د) صفر<br>
+                    الف) <span class="math-ltr">۰/۰۱</span> &nbsp;&nbsp;&nbsp; ب) <span class="math-ltr"><span class="fraction"><span class="numerator">۷</span><span class="denominator">۸</span></span></span> &nbsp;&nbsp;&nbsp; ج) <span class="math-ltr">۱/۵</span> &nbsp;&nbsp;&nbsp; د) صفر<br>
                     <strong>پاسخ تشریحی:</strong> احتمال باید بین ۰ و ۱ باشد. عدد ۱/۵ (یک و نیم) بزرگتر از ۱ است. گزینه صحیح: ج</p>
                 </div>
 
                 <div class="example-box">
                     <p><strong>تست ۴:</strong> در کیسه‌ای ۵ مهره زرد و ۳ مهره سبز است. احتمال انتخاب مهره سبز چقدر است؟<br>
-                    الف) <span class="math-ltr">۳/۵</span> &nbsp;&nbsp;&nbsp; ب) <span class="math-ltr">۳/۸</span> &nbsp;&nbsp;&nbsp; ج) <span class="math-ltr">۵/۸</span> &nbsp;&nbsp;&nbsp; د) <span class="math-ltr">۱/۳</span><br>
-                    <strong>پاسخ تشریحی:</strong> کل مهره‌ها ۸ تا. سبز ۳ تا. احتمال <span class="math-ltr">۳/۸</span>. گزینه صحیح: ب</p>
+                    الف) <span class="math-ltr"><span class="fraction"><span class="numerator">۳</span><span class="denominator">۵</span></span></span> &nbsp;&nbsp;&nbsp; ب) <span class="math-ltr"><span class="fraction"><span class="numerator">۳</span><span class="denominator">۸</span></span></span> &nbsp;&nbsp;&nbsp; ج) <span class="math-ltr"><span class="fraction"><span class="numerator">۵</span><span class="denominator">۸</span></span></span> &nbsp;&nbsp;&nbsp; د) <span class="math-ltr"><span class="fraction"><span class="numerator">۱</span><span class="denominator">۳</span></span></span><br>
+                    <strong>پاسخ تشریحی:</strong> کل مهره‌ها ۸ تا. سبز ۳ تا. احتمال <span class="math-ltr"><span class="fraction"><span class="numerator">۳</span><span class="denominator">۸</span></span></span>. گزینه صحیح: ب</p>
                 </div>
 
                 <div class="example-box">
                     <p><strong>تست ۵:</strong> خانواده‌ای دارای ۲ فرزند است. احتمال اینکه فرزند اول پسر باشد چقدر است؟<br>
-                    الف) <span class="math-ltr">۱/۴</span> &nbsp;&nbsp;&nbsp; ب) <span class="math-ltr">۱/۲</span> &nbsp;&nbsp;&nbsp; ج) <span class="math-ltr">۳/۴</span> &nbsp;&nbsp;&nbsp; د) <span class="math-ltr">۱/۳</span><br>
-                    <strong>پاسخ تشریحی:</strong> حالات: (پ،پ)، (پ،د)، (د،پ)، (د،د). در دو حالت اول فرزند اول پسر است. احتمال <span class="math-ltr">۲/۴ = ۱/۲</span>. گزینه صحیح: ب</p>
+                    الف) <span class="math-ltr"><span class="fraction"><span class="numerator">۱</span><span class="denominator">۴</span></span></span> &nbsp;&nbsp;&nbsp; ب) <span class="math-ltr"><span class="fraction"><span class="numerator">۱</span><span class="denominator">۲</span></span></span> &nbsp;&nbsp;&nbsp; ج) <span class="math-ltr"><span class="fraction"><span class="numerator">۳</span><span class="denominator">۴</span></span></span> &nbsp;&nbsp;&nbsp; د) <span class="math-ltr"><span class="fraction"><span class="numerator">۱</span><span class="denominator">۳</span></span></span><br>
+                    <strong>پاسخ تشریحی:</strong> حالات: (پ،پ)، (پ،د)، (د،پ)، (د،د). در دو حالت اول فرزند اول پسر است. احتمال <span class="math-ltr"><span class="fraction"><span class="numerator">۲</span><span class="denominator">۴</span></span> = <span class="fraction"><span class="numerator">۱</span><span class="denominator">۲</span></span></span>. گزینه صحیح: ب</p>
                 </div>
 
                 <div class="example-box">
                     <p><strong>تست ۶:</strong> تاس را می‌اندازیم. احتمال اینکه عدد رو شده هم زوج باشد و هم اول، چقدر است؟<br>
-                    الف) <span class="math-ltr">۱/۶</span> &nbsp;&nbsp;&nbsp; ب) <span class="math-ltr">۱/۳</span> &nbsp;&nbsp;&nbsp; ج) <span class="math-ltr">۱/۲</span> &nbsp;&nbsp;&nbsp; د) صفر<br>
+                    الف) <span class="math-ltr"><span class="fraction"><span class="numerator">۱</span><span class="denominator">۶</span></span></span> &nbsp;&nbsp;&nbsp; ب) <span class="math-ltr"><span class="fraction"><span class="numerator">۱</span><span class="denominator">۳</span></span></span> &nbsp;&nbsp;&nbsp; ج) <span class="math-ltr"><span class="fraction"><span class="numerator">۱</span><span class="denominator">۲</span></span></span> &nbsp;&nbsp;&nbsp; د) صفر<br>
                     <strong>پاسخ تشریحی:</strong> تنها عدد زوج و اول عدد ۲ است. ۱ حالت از ۶ حالت. گزینه صحیح: الف</p>
                 </div>
 
                 <div class="example-box">
-                    <p><strong>تست ۷:</strong> اگر احتمال وقوع یک پیشامد <span class="math-ltr">۳/۷</span> باشد، احتمال رخ ندادن آن چقدر است؟<br>
-                    الف) <span class="math-ltr">۳/۷</span> &nbsp;&nbsp;&nbsp; ب) <span class="math-ltr">۷/۳</span> &nbsp;&nbsp;&nbsp; ج) <span class="math-ltr">۴/۷</span> &nbsp;&nbsp;&nbsp; د) ۱<br>
-                    <strong>پاسخ تشریحی:</strong> <span class="math-ltr">۱ - ۳/۷ = ۴/۷</span>. گزینه صحیح: ج</p>
+                    <p><strong>تست ۷:</strong> اگر احتمال وقوع یک پیشامد <span class="math-ltr"><span class="fraction"><span class="numerator">۳</span><span class="denominator">۷</span></span></span> باشد، احتمال رخ ندادن آن چقدر است؟<br>
+                    الف) <span class="math-ltr"><span class="fraction"><span class="numerator">۳</span><span class="denominator">۷</span></span></span> &nbsp;&nbsp;&nbsp; ب) <span class="math-ltr"><span class="fraction"><span class="numerator">۷</span><span class="denominator">۳</span></span></span> &nbsp;&nbsp;&nbsp; ج) <span class="math-ltr"><span class="fraction"><span class="numerator">۴</span><span class="denominator">۷</span></span></span> &nbsp;&nbsp;&nbsp; د) ۱<br>
+                    <strong>پاسخ تشریحی:</strong> <span class="math-ltr">۱ - <span class="fraction"><span class="numerator">۳</span><span class="denominator">۷</span></span> = <span class="fraction"><span class="numerator">۴</span><span class="denominator">۷</span></span></span>. گزینه صحیح: ج</p>
                 </div>
 
                 <div class="example-box">
@@ -593,35 +615,35 @@
 
                 <div class="example-box">
                     <p><strong>تست ۹:</strong> مجموعه‌ی <span class="math-ltr">S = {۱, ۲, ..., ۹}</span> مفروض است. احتمال انتخاب عدد مربع کامل کدام است؟<br>
-                    الف) <span class="math-ltr">۲/۹</span> &nbsp;&nbsp;&nbsp; ب) <span class="math-ltr">۳/۹</span> &nbsp;&nbsp;&nbsp; ج) <span class="math-ltr">۱/۳</span> &nbsp;&nbsp;&nbsp; د) ب و ج<br>
-                    <strong>پاسخ تشریحی:</strong> مربع‌های کامل: ۱، ۴، ۹ (۳ عدد). احتمال <span class="math-ltr">۳/۹</span> یا همان <span class="math-ltr">۱/۳</span>. گزینه صحیح: د</p>
+                    الف) <span class="math-ltr"><span class="fraction"><span class="numerator">۲</span><span class="denominator">۹</span></span></span> &nbsp;&nbsp;&nbsp; ب) <span class="math-ltr"><span class="fraction"><span class="numerator">۳</span><span class="denominator">۹</span></span></span> &nbsp;&nbsp;&nbsp; ج) <span class="math-ltr"><span class="fraction"><span class="numerator">۱</span><span class="denominator">۳</span></span></span> &nbsp;&nbsp;&nbsp; د) ب و ج<br>
+                    <strong>پاسخ تشریحی:</strong> مربع‌های کامل: ۱، ۴، ۹ (۳ عدد). احتمال <span class="math-ltr"><span class="fraction"><span class="numerator">۳</span><span class="denominator">۹</span></span></span> یا همان <span class="math-ltr"><span class="fraction"><span class="numerator">۱</span><span class="denominator">۳</span></span></span>. گزینه صحیح: د</p>
                 </div>
 
                 <div class="example-box">
                     <p><strong>تست ۱۰:</strong> احتمال اینکه روز تولد یک نفر «جمعه» باشد چقدر است؟<br>
-                    الف) <span class="math-ltr">۱/۳۰</span> &nbsp;&nbsp;&nbsp; ب) <span class="math-ltr">۱/۷</span> &nbsp;&nbsp;&nbsp; ج) <span class="math-ltr">۱/۱۲</span> &nbsp;&nbsp;&nbsp; د) <span class="math-ltr">۱/۳۶۵</span><br>
-                    <strong>پاسخ تشریحی:</strong> هفته ۷ روز دارد. شانس هر روز <span class="math-ltr">۱/۷</span> است. گزینه صحیح: ب</p>
+                    الف) <span class="math-ltr"><span class="fraction"><span class="numerator">۱</span><span class="denominator">۳۰</span></span></span> &nbsp;&nbsp;&nbsp; ب) <span class="math-ltr"><span class="fraction"><span class="numerator">۱</span><span class="denominator">۷</span></span></span> &nbsp;&nbsp;&nbsp; ج) <span class="math-ltr"><span class="fraction"><span class="numerator">۱</span><span class="denominator">۱۲</span></span></span> &nbsp;&nbsp;&nbsp; د) <span class="math-ltr"><span class="fraction"><span class="numerator">۱</span><span class="denominator">۳۶۵</span></span></span><br>
+                    <strong>پاسخ تشریحی:</strong> هفته ۷ روز دارد. شانس هر روز <span class="math-ltr"><span class="fraction"><span class="numerator">۱</span><span class="denominator">۷</span></span></span> است. گزینه صحیح: ب</p>
                 </div>
 
                 <h3>۶. تست‌های تمرینی (بدون پاسخ برای دانش‌آموز)</h3>
                 <ul>
-                    <li>۱. در پرتاب یک تاس، احتمال آمدن عدد مرکب (غیر اول و غیر یک) چقدر است؟<br>الف) <span class="math-ltr">۱/۲</span> &nbsp;&nbsp;&nbsp; ب) <span class="math-ltr">۱/۳</span> &nbsp;&nbsp;&nbsp; ج) <span class="math-ltr">۲/۳</span> &nbsp;&nbsp;&nbsp; د) <span class="math-ltr">۱/۶</span></li>
+                    <li>۱. در پرتاب یک تاس، احتمال آمدن عدد مرکب (غیر اول و غیر یک) چقدر است؟<br>الف) <span class="math-ltr"><span class="fraction"><span class="numerator">۱</span><span class="denominator">۲</span></span></span> &nbsp;&nbsp;&nbsp; ب) <span class="math-ltr"><span class="fraction"><span class="numerator">۱</span><span class="denominator">۳</span></span></span> &nbsp;&nbsp;&nbsp; ج) <span class="math-ltr"><span class="fraction"><span class="numerator">۲</span><span class="denominator">۳</span></span></span> &nbsp;&nbsp;&nbsp; د) <span class="math-ltr"><span class="fraction"><span class="numerator">۱</span><span class="denominator">۶</span></span></span></li>
                     <br>
-                    <li>۲. در یک جعبه ۳ مهره سفید و <span class="math-ltr">x</span> مهره سیاه داریم. اگر احتمال درآمدن مهره سفید <span class="math-ltr">۱/۴</span> باشد، تعداد مهره‌های سیاه چندتاست؟<br>الف) ۳ &nbsp;&nbsp;&nbsp; ب) ۶ &nbsp;&nbsp;&nbsp; ج) ۹ &nbsp;&nbsp;&nbsp; د) ۱۲</li>
+                    <li>۲. در یک جعبه ۳ مهره سفید و <span class="math-ltr">x</span> مهره سیاه داریم. اگر احتمال درآمدن مهره سفید <span class="math-ltr"><span class="fraction"><span class="numerator">۱</span><span class="denominator">۴</span></span></span> باشد، تعداد مهره‌های سیاه چندتاست؟<br>الف) ۳ &nbsp;&nbsp;&nbsp; ب) ۶ &nbsp;&nbsp;&nbsp; ج) ۹ &nbsp;&nbsp;&nbsp; د) ۱۲</li>
                     <br>
-                    <li>۳. خانواده‌ای دارای ۳ فرزند است. احتمال اینکه فقط فرزند وسط دختر باشد کدام است؟<br>الف) <span class="math-ltr">۱/۸</span> &nbsp;&nbsp;&nbsp; ب) <span class="math-ltr">۱/۴</span> &nbsp;&nbsp;&nbsp; ج) <span class="math-ltr">۳/۸</span> &nbsp;&nbsp;&nbsp; د) <span class="math-ltr">۱/۲</span></li>
+                    <li>۳. خانواده‌ای دارای ۳ فرزند است. احتمال اینکه فقط فرزند وسط دختر باشد کدام است؟<br>الف) <span class="math-ltr"><span class="fraction"><span class="numerator">۱</span><span class="denominator">۸</span></span></span> &nbsp;&nbsp;&nbsp; ب) <span class="math-ltr"><span class="fraction"><span class="numerator">۱</span><span class="denominator">۴</span></span></span> &nbsp;&nbsp;&nbsp; ج) <span class="math-ltr"><span class="fraction"><span class="numerator">۳</span><span class="denominator">۸</span></span></span> &nbsp;&nbsp;&nbsp; د) <span class="math-ltr"><span class="fraction"><span class="numerator">۱</span><span class="denominator">۲</span></span></span></li>
                     <br>
                     <li>۴. اگر <span class="math-ltr">A</span> پیشامد غیرممکن باشد، <span class="math-ltr">P(A)</span> برابر است با:<br>الف) ۱ &nbsp;&nbsp;&nbsp; ب) <span class="math-ltr">∅</span> &nbsp;&nbsp;&nbsp; ج) ۰ &nbsp;&nbsp;&nbsp; د) تعریف نشده</li>
                     <br>
-                    <li>۵. کارتی را تصادفی از بین کارت‌های شماره ۱ تا ۱۰ می‌کشیم. احتمال اینکه شماره کارت زوج یا مضرب ۵ باشد چقدر است؟<br>الف) <span class="math-ltr">۶/۱۰</span> &nbsp;&nbsp;&nbsp; ب) <span class="math-ltr">۷/۱۰</span> &nbsp;&nbsp;&nbsp; ج) <span class="math-ltr">۵/۱۰</span> &nbsp;&nbsp;&nbsp; د) <span class="math-ltr">۸/۱۰</span></li>
+                    <li>۵. کارتی را تصادفی از بین کارت‌های شماره ۱ تا ۱۰ می‌کشیم. احتمال اینکه شماره کارت زوج یا مضرب ۵ باشد چقدر است؟<br>الف) <span class="math-ltr"><span class="fraction"><span class="numerator">۶</span><span class="denominator">۱۰</span></span></span> &nbsp;&nbsp;&nbsp; ب) <span class="math-ltr"><span class="fraction"><span class="numerator">۷</span><span class="denominator">۱۰</span></span></span> &nbsp;&nbsp;&nbsp; ج) <span class="math-ltr"><span class="fraction"><span class="numerator">۵</span><span class="denominator">۱۰</span></span></span> &nbsp;&nbsp;&nbsp; د) <span class="math-ltr"><span class="fraction"><span class="numerator">۸</span><span class="denominator">۱۰</span></span></span></li>
                     <br>
-                    <li>۶. دو تاس را پرتاب می‌کنیم. احتمال اینکه حاصل‌ضرب دو عدد ۱۲ شود چقدر است؟<br>الف) <span class="math-ltr">۱/۹</span> &nbsp;&nbsp;&nbsp; ب) <span class="math-ltr">۱/۶</span> &nbsp;&nbsp;&nbsp; ج) <span class="math-ltr">۱/۱۲</span> &nbsp;&nbsp;&nbsp; د) <span class="math-ltr">۵/۳۶</span></li>
+                    <li>۶. دو تاس را پرتاب می‌کنیم. احتمال اینکه حاصل‌ضرب دو عدد ۱۲ شود چقدر است؟<br>الف) <span class="math-ltr"><span class="fraction"><span class="numerator">۱</span><span class="denominator">۹</span></span></span> &nbsp;&nbsp;&nbsp; ب) <span class="math-ltr"><span class="fraction"><span class="numerator">۱</span><span class="denominator">۶</span></span></span> &nbsp;&nbsp;&nbsp; ج) <span class="math-ltr"><span class="fraction"><span class="numerator">۱</span><span class="denominator">۱۲</span></span></span> &nbsp;&nbsp;&nbsp; د) <span class="math-ltr"><span class="fraction"><span class="numerator">۵</span><span class="denominator">۳۶</span></span></span></li>
                     <br>
                     <li>۷. احتمال انتخاب یک مهره قرمز از کیسه‌ای برابر ۰/۴ است. اگر ۸ مهره قرمز در کیسه باشد، کل مهره‌ها چند تاست؟<br>الف) ۱۲ &nbsp;&nbsp;&nbsp; ب) ۲۰ &nbsp;&nbsp;&nbsp; ج) ۱۶ &nbsp;&nbsp;&nbsp; د) ۳۲</li>
                     <br>
                     <li>۸. اگر <span class="math-ltr">S={a, b, c, d}</span> و شانس انتخاب همه یکسان باشد، احتمال انتخاب حرف <span class="math-ltr">b</span> کدام است؟<br>الف) ۲۵٪ &nbsp;&nbsp;&nbsp; ب) ۵۰٪ &nbsp;&nbsp;&nbsp; ج) ۲۰٪ &nbsp;&nbsp;&nbsp; د) ۱۰۰٪</li>
                     <br>
-                    <li>۹. کدام گزینه احتمال یک پیشامد حتمی است؟<br>الف) ۱۰۰٪ &nbsp;&nbsp;&nbsp; ب) ۱ &nbsp;&nbsp;&nbsp; ج) <span class="math-ltr">۱۰/۱۰</span> &nbsp;&nbsp;&nbsp; د) همه موارد</li>
+                    <li>۹. کدام گزینه احتمال یک پیشامد حتمی است؟<br>الف) ۱۰۰٪ &nbsp;&nbsp;&nbsp; ب) ۱ &nbsp;&nbsp;&nbsp; ج) <span class="math-ltr"><span class="fraction"><span class="numerator">۱۰</span><span class="denominator">۱۰</span></span></span> &nbsp;&nbsp;&nbsp; د) همه موارد</li>
                     <br>
                     <li>۱۰. در پرتاب دو سکه و یک تاس، تعداد کل حالات فضای نمونه‌ای چند است؟<br>الف) ۸ &nbsp;&nbsp;&nbsp; ب) ۱۲ &nbsp;&nbsp;&nbsp; ج) ۲۴ &nbsp;&nbsp;&nbsp; د) ۱۰</li>
                 </ul>
